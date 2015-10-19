@@ -1,0 +1,10 @@
+[ignore]
+.*/dist/.*
+.*/lib/.*
+
+[include]
+
+[libs]
+
+[options]
+module.name_mapper='color-structure' -> 'color-structure/src/index'
