@@ -1,7 +1,7 @@
 {
   "name": "eased",
   "version": "0.0.2",
-  "description": "easing & animations in functional style that is type checked",
+  "description": "functional style easing & animations library with type safety",
   "keywords": [
     "easeing",
     "interpolation",
