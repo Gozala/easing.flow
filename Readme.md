@@ -18,7 +18,7 @@ const sampleAnimation = currentTime =>
 
 // Transition from blue to red using custom `Easing` function
 const customAnimation = currentTime =
-    ease(x => x ^ 2.4, color, blue, red, second, currentTime)
+    ease(x => Math.pow(x, 2.4), color, blue, red, second, currentTime)
 
 // Animate between 0 and 5 with the easeInOutQuad Easing
 const animation1 = currentTime =>
@@ -53,7 +53,7 @@ const sampleAnimation:$sampleAnimation = currentTime =>
 // Transition from blue to red using custom `Easing` function
 type $customAnimation = (currentTime:Time) => Color
 const customAnimation:$customAnimation = currentTime =
-    ease(x => x ^ 2.4, color, blue, red, second, currentTime)
+    ease(x => Math.pow(x, 2.4), color, blue, red, second, currentTime)
 
 // Animate between 0 and 5 with the easeInOutQuad Easing
 type $animation1 = (currentTime:Time) => Float
