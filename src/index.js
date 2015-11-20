@@ -97,7 +97,7 @@ export const easeOutSine/*:type.Easing*/ = time => Math.sin(time * (Math.PI / 2)
 export const easeInSine/*:type.Easing*/ = invert(easeOutSine)
 export const easeInOutSine/*:type.Easing*/ = inOut(easeInSine, easeOutSine)
 
-export const easeInExpo/*:type.Easing*/ = time => Math.pow(10 * (time - 1), 2)
+export const easeInExpo/*:type.Easing*/ = time => Math.pow(2, 10 * (time - 1))
 export const easeOutExpo/*:type.Easing*/ = invert(easeInExpo)
 export const easeInOutExpo/*:type.Easing*/ = inOut(easeInExpo, easeOutExpo)
 
