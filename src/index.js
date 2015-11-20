@@ -102,7 +102,7 @@ export const easeOutExpo/*:type.Easing*/ = invert(easeInExpo)
 export const easeInOutExpo/*:type.Easing*/ = inOut(easeInExpo, easeOutExpo)
 
 export const easeOutCirc/*:type.Easing*/ = time =>
-  Math.sqrt(Math.pow(1 - (time - 1), 2))
+  Math.sqrt(1 - Math.pow(time - 1, 2)
 export const easeInCirc/*:type.Easing*/ = invert(easeOutCirc)
 export const easeInOutCirc/*:type.Easing*/ = inOut(easeInCirc, easeOutCirc)
 
