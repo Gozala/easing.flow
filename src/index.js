@@ -77,19 +77,19 @@ export const cycle/*:type.cycle*/ = animation =>
 
 export const linear/*:type.Easing*/ = x => x
 
-export const easeInQuad/*:type.Easing*/ = time => time ^ 2
+export const easeInQuad/*:type.Easing*/ = time => Math.pow(time, 2)
 export const easeOutQuad/*:type.Easing*/ = invert(easeInQuad)
 export const easeInOutQuad/*:type.Easing*/ = inOut(easeInQuad, easeOutQuad)
 
-export const easeInCubic/*:type.Easing*/ = time => time ^ 3
+export const easeInCubic/*:type.Easing*/ = time => Math.pow(time, 3)
 export const easeOutCubic/*:type.Easing*/ = invert(easeInCubic)
 export const easeInOutCubic/*:type.Easing*/ = inOut(easeInCubic, easeOutCubic)
 
-export const easeInQuart/*:type.Easing*/ = time => time ^ 4
+export const easeInQuart/*:type.Easing*/ = time => Math.pow(time, 4)
 export const easeOutQuart/*:type.Easing*/ = invert(easeInQuad)
 export const easeInOutQuart/*:type.Easing*/ = inOut(easeInQuart, easeOutQuart)
 
-export const easeInQuint/*:type.Easing*/ = time => time ^ 5
+export const easeInQuint/*:type.Easing*/ = time => Math.pow(time, 5)
 export const easeOutQuint/*:type.Easing*/ = invert(easeInQuint)
 export const easeInOutQuint/*:type.Easing*/ = inOut(easeInQuint, easeOutQuint)
 
@@ -97,11 +97,12 @@ export const easeOutSine/*:type.Easing*/ = time => Math.sin(time * (Math.PI / 2)
 export const easeInSine/*:type.Easing*/ = invert(easeOutSine)
 export const easeInOutSine/*:type.Easing*/ = inOut(easeInSine, easeOutSine)
 
-export const easeInExpo/*:type.Easing*/ = time => 2 ^ (10 * (time - 1))
+export const easeInExpo/*:type.Easing*/ = time => Math.pow(10 * (time - 1), 2)
 export const easeOutExpo/*:type.Easing*/ = invert(easeInExpo)
 export const easeInOutExpo/*:type.Easing*/ = inOut(easeInExpo, easeOutExpo)
 
-export const easeOutCirc/*:type.Easing*/ = time => Math.sqrt(1 - (time - 1) ^ 2)
+export const easeOutCirc/*:type.Easing*/ = time =>
+  Math.sqrt(Math.pow(1 - (time - 1), 2))
 export const easeInCirc/*:type.Easing*/ = invert(easeOutCirc)
 export const easeInOutCirc/*:type.Easing*/ = inOut(easeInCirc, easeOutCirc)
 
@@ -128,7 +129,7 @@ export const easeInElastic/*:type.Easing*/ = time => {
   const s  = 0.075
   const p  = 0.3
   const t = time - 1
-  return -((2 ^ (10 * t)) * Math.sin((t - s) * (2 * Math.PI) / p))
+  return -(Math.pow(2, 10 * t) * Math.sin((t - s) * (2 * Math.PI) / p))
 }
 export const easeOutElastic/*:type.Easing*/ = invert(easeInElastic)
 export const easeInOutElastic/*:type.Easing*/ = inOut(easeInElastic, easeOutElastic)
