@@ -1,6 +1,6 @@
 {
   "name": "eased",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "functional style easing & animations library with type safety",
   "keywords": [
     "easeing",
