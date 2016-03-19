@@ -1,10 +1,13 @@
 [ignore]
 .*/dist/.*
-.*/lib/.*
-
-[include]
+.*/node_modules/babel.*
+.*/node_modules/tap/*
 
 [libs]
 
+[include]
+
 [options]
-module.name_mapper='color-structure' -> 'color-structure/src/index'
+
+suppress_comment= \\(.\\|\n\\)*\\@FlowIssue
+suppress_comment= \\(.\\|\n\\)*\\@FlowIgnore
