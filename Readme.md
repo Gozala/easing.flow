@@ -3,7 +3,7 @@
 Yet another library for creating simple animations with easing functions. Things that make it stand out from alternatives is a pure functional API & type safety via [flow][] static type checker.
 
 
-Library is a direct port of a wonderful [Easing][Easing Elm] library for an exciting [Elm][] programing language (that is worth checking out). It is designed around the idea of: **Easing** functions interpolate a value over time. Where value can be a value of any type, including numbers, points and colors. In fact you can easily introduce your own value to the mix!
+Library is a direct port of a wonderful [Easing][Easing.elm] library for an exciting [Elm][] programing language (that is worth checking out). It is designed around the idea of: **Easing** functions interpolate a value over time. Where value can be a value of any type, including numbers, points and colors. In fact you can easily introduce your own value to the mix!
 
 You can find graphical examples of easing functions on [easings.net][].
 
@@ -79,5 +79,5 @@ const vec3movement = currentTime =>
 
 [Elm]:http://elm-lang.org
 [flow]:http://flowtype.org
-[Easing]:http://package.elm-lang.org/packages/Dandandan/Easing/2.0.0
+[Easing.elm]:http://package.elm-lang.org/packages/Dandandan/Easing/2.0.0
 [easings.net]:http://easings.net
