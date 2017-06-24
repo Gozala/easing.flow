@@ -1,4 +1,6 @@
-dist
 lib
-*~
-~*
+dist
+**/*.js
+**/*.flow
+!src/**/*.js
+!src/**/*.flow

@@ -1,7 +1,0 @@
-/* @flow */
-
-declare export function zip <x, y, z>
-  ( combine: (x:x, y:y) => z
-  , xs: Array<x>
-  , ys: Array<y>
-  ):Array<z>

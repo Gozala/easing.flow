@@ -1,4 +1,4 @@
-# eased
+# easing.flow
 
 Yet another library for creating simple animations with easing functions. Things that make it stand out from alternatives is a pure functional API & type safety via [flow][] static type checker.
 
@@ -9,7 +9,7 @@ You can find graphical examples of easing functions on [easings.net][].
 
 
 ```js
-import {ease, easeInCubic, easeInOutQuad, float} from "eased"
+import {ease, easeInCubic, easeInOutQuad, float} from "easing.flow"
 
 const second = 1000
 
@@ -41,8 +41,8 @@ const vec3movement = currentTime =>
 If you happen to type check your JS code with [flow][] you can take further advantage of this library:
 
 ```js
-import type {Time, Float, Color, Interpolation} from "eased/type"
-import {ease, easeInCubic, easeInOutQuad, float} from "eased"
+import type {Time, Float, Color, Interpolation} from "easing.flow"
+import {ease, easeInCubic, easeInOutQuad, float} from "easing.flow"
 
 const second = 1000
 

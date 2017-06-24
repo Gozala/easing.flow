@@ -1,6 +1,6 @@
 {
-  "name": "eased",
-  "version": "0.1.0",
+  "name": "easing.flow",
+  "version": "0.3.0",
   "description": "functional style easing & animations library with type safety",
   "keywords": [
     "easeing",
@@ -13,39 +13,41 @@
     "flow"
   ],
   "author": "Irakli Gozalishvili <rfobic@gmail.com> (http://jeditoolkit.com)",
-  "homepage": "https://github.com/Gozala/eased",
-  "main": "./lib/index.js",
+  "repository": "https://github.com/Gozala/easing.flow",
+  "main": "Easing",
+  "license": "MIT",
   "dependencies": {
-    "value-color": "0.1.1"
+    "color.flow": "^0.3.0"
   },
   "devDependencies": {
-    "babel-cli": "6.6.5",
-    "babel-plugin-syntax-flow": "6.3.13",
-    "babel-plugin-transform-es2015-modules-umd": "6.4.3",
-    "babel-plugin-transform-flow-strip-types": "6.4.0",
-    "babel-preset-es2015": "6.3.13",
-    "babel-register": "6.4.3",
-    "flow-bin": "0.22.1",
-    "tap": "1.1.0",
-    "tape": "4.4.0"
+    "babel-cli": "6.24.1",
+    "babel-preset-flow-node": "^1.0.2",
+    "babel-register": "6.24.1",
+    "blue-tape": "^1.0.0",
+    "documentation": "^4.0.0-rc.1",
+    "flow-bin": "0.48.0",
+    "flow-copy-source": "1.1.0",
+    "husky": "^0.14.0",
+    "lint-staged": "^4.0.0",
+    "prettier": "^1.4.4"
   },
   "scripts": {
-    "test": "npm run flow && npm run tape",
-    "tape": "tape -r babel-register test/**/*.js",
-    "flow": "flow check",
-    "start": "babel --watch --out-dir ./lib ./src",
-    "build-node": "babel --out-dir ./lib ./src && cp ./src/*.flow ./lib",
-    "build-browser": "mkdir -p dist && babel --out-file ./dist/eased.js --plugins 'transform-es2015-modules-umd' ./src",
-    "build": "npm run build-node && npm run build-browser",
-    "prepublish": "npm run build && npm run flow"
+    "test": "npm run test:flow && npm run test:tape",
+    "test:tape": "blue-tape -r babel-register test/**/*.js",
+    "test:flow": "flow check",
+    "build:clear": "rm -rf ./*.js && rm -rf ./*.js.flow && rm -rf Easing",
+    "build:types": "flow-copy-source -v src .",
+    "build:node": "babel --out-dir . src",
+    "build:api": "documentation readme --section=API src/Easing",
+    "build:docs": "documentation build --document-exported src/** -f html --o docs",
+    "build": "npm run build:node && npm run build:types",
+    "prepublish": "npm run build && npm test",
+    "precommit": "lint-staged"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Gozala/eased.git",
-    "web": "https://github.com/Gozala/eased"
-  },
-  "bugs": {
-    "url": "https://github.com/Gozala/eased/issues/"
-  },
-  "license": "MIT"
+  "lint-staged": {
+    "*.js": [
+      "prettier --parser flow --no-semi --write",
+      "git add"
+    ]
+  }
 }
